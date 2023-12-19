@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>ChatGPT</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{ url_for('static', filename='css/page.css') }}"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="152x152"
+      href="{{ url_for('static', filename='images/apple-touch-icon.png') }}"
+    />
+    <!-- <link rel="icon" type="image/png" sizes="32x32" href="{{ url_for('static', filename='images/favicon-32x32.png') }}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ url_for('static', filename='images/favicon-16x16.png') }}"> -->
+    <link
+      rel="icon"
+      type="image/png"
+      href="{{ url_for('static', filename='favicon.ico') }}"
+    />
+    <link
+      rel="manifest"
+      href="{{ url_for('static', filename='images/site.webmanifest') }}"
+    />
+    <link
+      rel="mask-icon"
+      href="{{ url_for('static', filename='images/safari-pinned-tab.svg') }}"
+      color="#5bbad5"
+    />
+    <meta name="msapplication-TileColor" content="#00aba9" />
+    <meta name="theme-color" content="#ffffff" />
+  </head>
+  <body>
+    <form action="goback" method="post">
+      <div class="container">
+        <h2>Sign Up Page</h2>
+        <label for="user_id"><b>User ID</b></label>
+        <input
+          type="text"
+          placeholder="Enter User ID"
+          name="user_id"
+          value="{{ PROLIFIC_PID }}"
+          readonly
+          required
+        /><br />
+        <label for="password"><b>Password</b></label>
+        <input
+          type="password"
+          placeholder="Enter Password"
+          name="password"
+          autocomplete="current-password"
+          required
+        /><br />
+        <!-- <label for="admin_password"><b>Chatbot Access Key</b></label> -->
+        <!-- <input
+          type="text"
+          placeholder="Enter Access Key"
+          name="Chatbot Access Key"
+          autocomplete="current-password"
+          required
+        /><br /> -->
+
+        <!-- 新增的隱藏欄位來存儲 'id' 參數 -->
+        <!-- <input
+          type="hidden"
+          name="id"
+          value="{{ id }}"
+        /> -->
+
+        <input type="hidden" name="PROLIFIC_PID" value="{{ PROLIFIC_PID }}" />
+
+        <div class="button-container">
+          <button type="button" onclick="window.history.back()">Back</button>
+          <button type="submit">Sign Up</button>
+        </div>
+      </div>
+    </form>
+  </body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>ExplainerGPT</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="apple-touch-icon" sizes="152x152" href="{{ url_for('static', filename='images/apple-touch-icon.png') }}">
+    <!-- <link rel="icon" type="image/png" sizes="32x32" href="{{ url_for('static', filename='images/favicon-32x32.png') }}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ url_for('static', filename='images/favicon-16x16.png') }}"> -->
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='favicon.ico') }}">
+    <link rel="manifest" href="{{ url_for('static', filename='images/site.webmanifest') }}">
+    <link rel="mask-icon" href="{{ url_for('static', filename='images/safari-pinned-tab.svg') }}" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#00aba9">
+    <meta name="theme-color" content="#ffffff">
+
+    <!-- data passed by the fonrtend -->
+    <script type="text/javascript">
+      var claim = decodeURIComponent("{{ claim|urlencode }}");
+      var initial_explanation = decodeURIComponent("{{ initial_explanation|urlencode }}");
+      var questionCollection_id = decodeURIComponent("{{ id|urlencode }}");
+      var user_id = decodeURIComponent("{{ user_id|urlencode }}");
+    </script>
+  </head>
+
+  <body>
+    <!-- partial:index.partial.html -->
+    <section class="msger">
+      <header class="msger-header">
+        <div class="msger-header-title">
+          <button id="title-btn">Claim & Explanation</button>
+        </div>
+      </header>
+
+      <div id="loading-icon"></div>
+
+      <div id="popup">
+        <div class="popup-content">
+          <div class="popup-scroll">
+            <div class="popup-line">
+              <!-- Before summary Explanation: -->
+              <h2 style="color: red;">Read "Claim" for 10 Seconds</h2>
+            </div>
+            <div class="popup-line">
+              <!-- claim -->
+              <h2 style="color: red;">Claim</h2>
+              <!-- claim content -->
+              <p></p>
+            </div>
+          </div>
+        </div>
+        <button id="close-btn" style="display: none;">
+          <span class="close-text">Close</span>
+          <span class="close-icon"></span>
+        </button>        
+      </div>
+      
+
+      <main class="msger-chat">
+        <div class="msg left-msg">
+          <div
+            style="
+              background-image: url(https://img.icons8.com/dotty/160/futurama-bender.png);
+            "
+          ></div>
+      </main>
+
+      <form class="msger-inputarea">
+        <p class="msger-input" id="textInput">Your feedback matters greatly to us. Thanks!</p>
+        <button id="submit-btn" type="submit" class="msger-send-btn">Submit</button>
+      </form>      
+    </section>
+
+    <script src="https://use.fontawesome.com/releases/v5.0.13/js/all.js"></script>
+    <script type="module" src="{{ url_for('static', filename='js/main.js') }}"></script>
+    <script type="module" src="{{ url_for('static', filename='js/questions.js') }}"></script>
+    <!-- <script src="static/js/sweetalert2.min.js"></script> -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.2.2/dist/sweetalert2.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.2.2/dist/sweetalert2.min.js"></script>
+
+    <!-- partial -->
+  </body>
+</html>

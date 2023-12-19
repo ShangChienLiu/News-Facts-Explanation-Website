@@ -1,0 +1,53 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+  background: linear-gradient(225deg, #FF3CAC 0%, #784BA0 50%, #2B86C5 100%);
+  font-family: Arial, sans-serif;
+  color: #fff;
+  margin: 0;
+  font-size: 140%;
+  /* Makes text 2x bigger */
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  /* Makes form padding 2x bigger */
+}
+
+label {
+  display: block;
+  margin-bottom: 10px;
+  /* Makes label margin 2x bigger */
+}
+
+input {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  /* Makes input padding 2x bigger */
+  margin-bottom: 10px;
+  /* Makes input margin 2x bigger */
+  font-size: 2em;
+  /* Ensures input text scales with body font size */
+}
+
+.button-container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.button-container button {
+  width: 70%;
+  padding: 10px;
+  /* Makes button padding 2x bigger */
+  font-size: 1.4em;
+  /* Ensures button text scales with body font size */
+}
